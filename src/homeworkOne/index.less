@@ -1,0 +1,142 @@
+html{
+    font-size: 100px;
+}
+.one-body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: .16rem;
+    background-color: #fff;
+    .one-header{
+        position: fixed;
+        line-height: .44rem;
+        overflow: hidden;
+        width: 100%;
+        background-color: #1cb3c3;
+        display: flex;
+        flex-basis: row;
+        justify-content: space-between;
+        align-items: center;
+        color: #aefdff;
+        z-index: 1;
+        .h-left{
+            margin-left: .15rem;
+            font-size: .2rem;
+        }
+        .h-right{
+            margin-right: .1rem;
+            font-size: .2rem;
+        }
+    }
+    .one-dateBar{
+        height: .64rem;
+        width: 100%;
+        position: fixed;
+        overflow: hidden;
+        top: .44rem;
+        z-index: 1;
+        background-color: #1cb3c3;
+        color: #aefdff;
+        display: flex;
+        flex-direction: row;
+        &.hide{
+            animation: dateBarHide .1s linear;
+            animation-fill-mode: forwards;
+        }
+        &.show{
+            animation: dateBarShow .1s linear;
+            animation-fill-mode: forwards;
+        }
+        .date-more{
+            display: flex;
+            width: .64rem;
+            height: .48rem;
+            border-left: 1.5px solid #33bccc;
+            flex-direction: column;
+            float: right;
+            align-items: center;
+            justify-content: center;
+            font-size: .12rem;
+            .date-icon{
+                font-size: .2rem;
+            }
+        }
+    }
+    .one-airline{
+        position: relative;
+        top: .44rem;
+        padding-top: .64rem;
+    } 
+    .one-footer{
+        height: .47rem;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        z-index: 1;
+        border-top: 1px solid #f5f5f5;
+        color: #acacac;
+        font-size: .12rem;
+        &.hide{
+            animation: chooseBarHide .1s linear;
+            animation-fill-mode: forwards;
+        }
+        &.show{
+            animation: chooseBarShow .1s linear;
+            animation-fill-mode: forwards;
+        }
+        .chooseBar{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            .block{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-icon{
+                font-size: .18rem;
+            }
+        }
+    }
+}
+
+@keyframes dateBarHide{
+    from {
+        height: .64rem;
+    }
+    to {
+        height: 0rem;
+    }
+}
+@keyframes dateBarShow{
+    from {
+        height: 0rem;
+    }
+    to {
+        height: .64rem;
+    }
+}
+@keyframes chooseBarHide{
+    from {
+        height: .47rem;
+    }
+    to {
+        height: 0rem;
+    }
+}
+@keyframes chooseBarShow{
+    from {
+        height: 0rem;
+    }
+    to {
+        height: .47rem;
+    }
+}

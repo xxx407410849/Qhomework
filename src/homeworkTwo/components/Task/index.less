@@ -1,0 +1,43 @@
+.task-ctn{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: .44rem;
+    height: .44rem;
+    width: 100%;
+    padding: 0 .15rem;
+    background-color: #f4f4f4;
+    transition: linear .1s;
+    &.task-finished{
+        background-color: #a5d296;
+        .task-name{
+            text-decoration: line-through;
+        }
+    }
+    &:hover{
+        border-left: 5px solid #8283a7;
+        border-right: 5px solid #8283a7;
+    }
+    .task-name{
+        border-left: 1px solid #e5e5e5;
+        padding-left: .1rem;
+    }
+
+    input{
+        width: .22rem;
+        height: .22rem;
+        line-height: .44rem;
+        margin-right: .1rem;
+    }
+    .task-delete{
+        position: absolute;
+        width: .44rem;
+        cursor: pointer;
+        right: 0;
+        padding-right: .1rem;
+        font-size: .12rem;
+        color: rgba(0,0,0,0.3);
+    }
+}
