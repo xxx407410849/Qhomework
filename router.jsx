@@ -26,58 +26,6 @@ class UNDO extends React.Component {
         )
     }
 }
-class PrivateRoute extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isAuthor: true, //默认登录
-            isAuthorType: false //默认无功能权限
-        }
-    }
-    componentWillMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-    requireAuth = () => {
-        if (location.pathname != "/") {
-            if (this.props.home.userName || this.props.login.loginStatus) return true;
-            else return false;
-
-        }
-        return true;
-    }
-    render() {
-        const { component: Component, home, login, accessType, ...rest } = this.props;
-        let userType = home.type || login.userType;
-        return (
-            <Route
-                {...rest}
-                render={props => {
-                    if (!home.reloadStatus && !login.loginLoading) return <div>Loading</div>;
-                    if (!(home.userName || login.loginStatus))message.warning("请先登录");
-                    return (home.userName || login.loginStatus)
-                        ? (!accessType || [...accessType].indexOf(userType) != -1 ?
-                            <Component {...props} /> :
-                            <Redirect
-                                to={{
-                                    pathname: '/block',
-                                    state: { from: props.location }
-                                }}
-                            />)
-                        : (<Redirect
-                            to={{
-                                pathname: '/',
-                                state: { from: props.location }
-                            }}
-                        />)
-                }
-                }
-            >
-            </Route>
-        )
-    }
-}
 function select(state) {
     return {
         login: state.login,

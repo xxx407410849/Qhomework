@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less';
 
-import {Table , Icon} from 'antd';
+import { Table, Icon } from 'antd';
 import { connect } from 'react-redux';
 const columns = [{
     title: '标题',
@@ -35,30 +35,30 @@ const columns = [{
     align: "center",
     width: 200
 }];
-class ArticleTable extends React.Component{
-    constructor(props){
+class ArticleTable extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
 
         }
     }
-    render(){
-        let {articleList , uploadloading} = this.props.three;
+    render() {
+        let { articleList, uploadloading } = this.props.three;
         return (
-            <Table 
-                className = "table-article"
-                columns = {columns}
-                bordered = {true}
-                dataSource = {articleList}
-                rowKey = "_id"
-                loading = {!uploadloading}
+            <Table
+                className="table-article"
+                columns={columns}
+                bordered={true}
+                dataSource={articleList}
+                rowKey="_id"
+                loading={!uploadloading}
             />
         )
     }
 }
-function select(state){
+function select(state) {
     return {
-        three : state.three
+        three: state.three
     }
 }
 
