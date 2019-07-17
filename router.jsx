@@ -26,15 +26,6 @@ class UNDO extends React.Component {
         )
     }
 }
-function select(state) {
-    return {
-        login: state.login,
-        home: state.home
-    };
-}
-
-PrivateRoute = connect(select, null, null, { pure: false })(PrivateRoute);
-
 export default (
     <HashRouter>
         <Provider store={store}>

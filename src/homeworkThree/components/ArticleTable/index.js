@@ -5,10 +5,13 @@ import { Table, Icon } from 'antd';
 import { connect } from 'react-redux';
 const columns = [{
     title: '标题',
-    dataIndex: 'name',
-    key: 'name',
+    dataIndex: 'title',
+    key: 'title',
     align: "center",
-    width: 300
+    width: 300,
+    render: (item,record) => {
+        return (<a href = {record.url}>{record.title}</a>)
+    }
 }, {
     title: '字数',
     dataIndex: 'totalNum',
